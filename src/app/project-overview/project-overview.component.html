@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <ng-container *ngIf="ProjectFloors.length > 0">
+    <div class="project-container container-fluid" *ngFor="let project of ProjectFloors">
+       <single-project
+        [projectInfo]="project"
+        ></single-project>
+      </div>
+  </ng-container>
+</div>

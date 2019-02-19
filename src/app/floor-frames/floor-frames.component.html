@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <div *ngIf="errorMessage!=null">{{errorMessage}}</div>
+  <mat-accordion class="container-fluid">
+    <mat-expansion-panel *ngFor="let order of ordernumberFrames">
+      <mat-expansion-panel-header>
+        {{order.ordernumber}}
+      </mat-expansion-panel-header>
+      <div *ngFor="let frame of order.frames">
+        <!-- Put single frames here -->
+        <single-frame
+        [frame]="frame"
+        ></single-frame>
+      </div>
+      </mat-expansion-panel>
+  </mat-accordion>
+</mat-dialog-content>

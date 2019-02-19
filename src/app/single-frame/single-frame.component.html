@@ -1,0 +1,36 @@
+<div>
+  <h5>{{GetTag()}}</h5>
+  <h5>{{frame.boxnumber}}</h5>
+
+  <h6>Prep</h6>
+  <div *ngFor="let status of frameStatus.prepStatuses">
+    <mat-checkbox
+    [(ngModel)]="prepStatuses[status.bit]"
+    >
+      {{status.for}}
+    </mat-checkbox>
+  </div>
+
+  <h6>Install</h6>
+  <div *ngFor="let status of frameStatus.installationStatuses">
+    <mat-checkbox
+    [(ngModel)]="installStatuses[status.bit]"
+    >
+      {{status.for}}
+    </mat-checkbox>
+  </div>
+
+  <h6>SU</h6>
+  <mat-radio-group [(ngModel)]="suOption">
+    <mat-radio-button *ngFor="let option of frameStatus.suOptions" [value]="option.status">
+      {{option.label}}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <br>
+  <button mat-raised-button
+  color="primary"
+  (click)="UpsertStatus()"
+  >Update</button>
+
+</div>

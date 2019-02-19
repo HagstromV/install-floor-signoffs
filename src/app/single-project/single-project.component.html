@@ -1,0 +1,10 @@
+<h5 *ngIf="projectInfo!=null" class="container-fluid project-header" (click) = "ShowFloors()">
+  {{projectInfo.projectname}} - <b>{{projectInfo.project_id}}</b>
+</h5>
+<div *ngIf="showFloors" class="floors-accordion">
+  <ul >
+    <li *ngFor="let floor of projectInfo.floors" (click)="ShowFrames(floor)">
+      {{floor}}
+    </li>
+  </ul>
+</div>
